@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anti-AFK", "Anti-AFK.csproj", "{BFD3DECA-803D-4498-B93C-1D4DA6CFA39C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFD3DECA-803D-4498-B93C-1D4DA6CFA39C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD3DECA-803D-4498-B93C-1D4DA6CFA39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD3DECA-803D-4498-B93C-1D4DA6CFA39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD3DECA-803D-4498-B93C-1D4DA6CFA39C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C28F16F-3517-4AB2-A515-284EE5BF0B8F}
+	EndGlobalSection
+EndGlobal
