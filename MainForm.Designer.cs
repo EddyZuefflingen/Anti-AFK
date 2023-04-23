@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pMain = new MetroFramework.Controls.MetroPanel();
+            this.txtCostumIntervall = new MetroFramework.Controls.MetroTextBox();
+            this.lblCostumInterval = new MetroFramework.Controls.MetroLabel();
             this.btnCostumKeyInfo = new MetroFramework.Controls.MetroButton();
             this.txtKeypressCostum = new MetroFramework.Controls.MetroTextBox();
             this.lblKeypressIndividuell = new MetroFramework.Controls.MetroLabel();
@@ -47,8 +49,6 @@
             this.lblState = new MetroFramework.Controls.MetroLabel();
             this.lblStateVal = new MetroFramework.Controls.MetroLabel();
             this.lblKeyActivate = new MetroFramework.Controls.MetroLabel();
-            this.txtCostumIntervall = new MetroFramework.Controls.MetroTextBox();
-            this.lblCostumInterval = new MetroFramework.Controls.MetroLabel();
             this.pMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,13 +85,52 @@
             this.pMain.VerticalScrollbarHighlightOnWheel = false;
             this.pMain.VerticalScrollbarSize = 10;
             // 
+            // txtCostumIntervall
+            // 
+            // 
+            // 
+            // 
+            this.txtCostumIntervall.CustomButton.Image = null;
+            this.txtCostumIntervall.CustomButton.Location = new System.Drawing.Point(216, 1);
+            this.txtCostumIntervall.CustomButton.Name = "";
+            this.txtCostumIntervall.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCostumIntervall.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCostumIntervall.CustomButton.TabIndex = 1;
+            this.txtCostumIntervall.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCostumIntervall.CustomButton.UseSelectable = true;
+            this.txtCostumIntervall.CustomButton.Visible = false;
+            this.txtCostumIntervall.Lines = new string[0];
+            this.txtCostumIntervall.Location = new System.Drawing.Point(4, 238);
+            this.txtCostumIntervall.MaxLength = 32767;
+            this.txtCostumIntervall.Name = "txtCostumIntervall";
+            this.txtCostumIntervall.PasswordChar = '\0';
+            this.txtCostumIntervall.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCostumIntervall.SelectedText = "";
+            this.txtCostumIntervall.SelectionLength = 0;
+            this.txtCostumIntervall.SelectionStart = 0;
+            this.txtCostumIntervall.ShortcutsEnabled = true;
+            this.txtCostumIntervall.Size = new System.Drawing.Size(238, 23);
+            this.txtCostumIntervall.TabIndex = 18;
+            this.txtCostumIntervall.UseSelectable = true;
+            this.txtCostumIntervall.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCostumIntervall.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lblCostumInterval
+            // 
+            this.lblCostumInterval.AutoSize = true;
+            this.lblCostumInterval.Location = new System.Drawing.Point(2, 216);
+            this.lblCostumInterval.Name = "lblCostumInterval";
+            this.lblCostumInterval.Size = new System.Drawing.Size(172, 19);
+            this.lblCostumInterval.TabIndex = 17;
+            this.lblCostumInterval.Text = "Individual interval (seconds):";
+            // 
             // btnCostumKeyInfo
             // 
             this.btnCostumKeyInfo.Location = new System.Drawing.Point(4, 384);
             this.btnCostumKeyInfo.Name = "btnCostumKeyInfo";
             this.btnCostumKeyInfo.Size = new System.Drawing.Size(234, 23);
             this.btnCostumKeyInfo.TabIndex = 16;
-            this.btnCostumKeyInfo.Text = "Info über Indivduelle Taste";
+            this.btnCostumKeyInfo.Text = "Info about Indivdual Keys";
             this.btnCostumKeyInfo.UseSelectable = true;
             this.btnCostumKeyInfo.Click += new System.EventHandler(this.btnCostumKeyInfo_Click);
             // 
@@ -133,18 +172,18 @@
             this.lblKeypressIndividuell.AutoSize = true;
             this.lblKeypressIndividuell.Location = new System.Drawing.Point(2, 333);
             this.lblKeypressIndividuell.Name = "lblKeypressIndividuell";
-            this.lblKeypressIndividuell.Size = new System.Drawing.Size(106, 19);
+            this.lblKeypressIndividuell.Size = new System.Drawing.Size(90, 19);
             this.lblKeypressIndividuell.TabIndex = 14;
-            this.lblKeypressIndividuell.Text = "Individuelle Taste";
+            this.lblKeypressIndividuell.Text = "Individual key:";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(4, 272);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(72, 19);
             this.metroLabel2.TabIndex = 13;
-            this.metroLabel2.Text = "Tastendrücke:";
+            this.metroLabel2.Text = "Keystrokes:";
             // 
             // cbKeypresses
             // 
@@ -170,16 +209,16 @@
             this.lblProcess.Name = "lblProcess";
             this.lblProcess.Size = new System.Drawing.Size(56, 19);
             this.lblProcess.TabIndex = 11;
-            this.lblProcess.Text = "Prozess:";
+            this.lblProcess.Text = "Process:";
             // 
             // cbApps
             // 
             this.cbApps.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Anti_AFK.Properties.Settings.Default, "LastProcess", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cbApps.FormattingEnabled = true;
             this.cbApps.ItemHeight = 23;
-            this.cbApps.Location = new System.Drawing.Point(3, 124);
+            this.cbApps.Location = new System.Drawing.Point(2, 124);
             this.cbApps.Name = "cbApps";
-            this.cbApps.Size = new System.Drawing.Size(238, 29);
+            this.cbApps.Size = new System.Drawing.Size(239, 29);
             this.cbApps.TabIndex = 10;
             this.cbApps.Text = global::Anti_AFK.Properties.Settings.Default.LastProcess;
             this.cbApps.UseSelectable = true;
@@ -199,9 +238,9 @@
             this.lblNextKey.AutoSize = true;
             this.lblNextKey.Location = new System.Drawing.Point(3, 76);
             this.lblNextKey.Name = "lblNextKey";
-            this.lblNextKey.Size = new System.Drawing.Size(123, 19);
+            this.lblNextKey.Size = new System.Drawing.Size(106, 19);
             this.lblNextKey.TabIndex = 8;
-            this.lblNextKey.Text = "Nächste Bewegung:";
+            this.lblNextKey.Text = "Next Movement:";
             // 
             // lblInterval
             // 
@@ -245,9 +284,9 @@
             this.lblLastKeyPress.AutoSize = true;
             this.lblLastKeyPress.Location = new System.Drawing.Point(3, 57);
             this.lblLastKeyPress.Name = "lblLastKeyPress";
-            this.lblLastKeyPress.Size = new System.Drawing.Size(111, 19);
+            this.lblLastKeyPress.Size = new System.Drawing.Size(101, 19);
             this.lblLastKeyPress.TabIndex = 4;
-            this.lblLastKeyPress.Text = "Letzte Bewegung:";
+            this.lblLastKeyPress.Text = "Last Movement:";
             // 
             // metroLabel1
             // 
@@ -273,57 +312,18 @@
             this.lblStateVal.ForeColor = System.Drawing.Color.Red;
             this.lblStateVal.Location = new System.Drawing.Point(52, 23);
             this.lblStateVal.Name = "lblStateVal";
-            this.lblStateVal.Size = new System.Drawing.Size(30, 19);
+            this.lblStateVal.Size = new System.Drawing.Size(28, 19);
             this.lblStateVal.TabIndex = 2;
-            this.lblStateVal.Text = "Aus";
+            this.lblStateVal.Text = "Off";
             // 
             // lblKeyActivate
             // 
             this.lblKeyActivate.AutoSize = true;
             this.lblKeyActivate.Location = new System.Drawing.Point(3, 4);
             this.lblKeyActivate.Name = "lblKeyActivate";
-            this.lblKeyActivate.Size = new System.Drawing.Size(169, 19);
+            this.lblKeyActivate.Size = new System.Drawing.Size(129, 19);
             this.lblKeyActivate.TabIndex = 0;
-            this.lblKeyActivate.Text = "Aktivieren / Deaktivieren: F1";
-            // 
-            // txtCostumIntervall
-            // 
-            // 
-            // 
-            // 
-            this.txtCostumIntervall.CustomButton.Image = null;
-            this.txtCostumIntervall.CustomButton.Location = new System.Drawing.Point(216, 1);
-            this.txtCostumIntervall.CustomButton.Name = "";
-            this.txtCostumIntervall.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtCostumIntervall.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCostumIntervall.CustomButton.TabIndex = 1;
-            this.txtCostumIntervall.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCostumIntervall.CustomButton.UseSelectable = true;
-            this.txtCostumIntervall.CustomButton.Visible = false;
-            this.txtCostumIntervall.Lines = new string[0];
-            this.txtCostumIntervall.Location = new System.Drawing.Point(4, 238);
-            this.txtCostumIntervall.MaxLength = 32767;
-            this.txtCostumIntervall.Name = "txtCostumIntervall";
-            this.txtCostumIntervall.PasswordChar = '\0';
-            this.txtCostumIntervall.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCostumIntervall.SelectedText = "";
-            this.txtCostumIntervall.SelectionLength = 0;
-            this.txtCostumIntervall.SelectionStart = 0;
-            this.txtCostumIntervall.ShortcutsEnabled = true;
-            this.txtCostumIntervall.Size = new System.Drawing.Size(238, 23);
-            this.txtCostumIntervall.TabIndex = 18;
-            this.txtCostumIntervall.UseSelectable = true;
-            this.txtCostumIntervall.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCostumIntervall.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lblCostumInterval
-            // 
-            this.lblCostumInterval.AutoSize = true;
-            this.lblCostumInterval.Location = new System.Drawing.Point(2, 216);
-            this.lblCostumInterval.Name = "lblCostumInterval";
-            this.lblCostumInterval.Size = new System.Drawing.Size(195, 19);
-            this.lblCostumInterval.TabIndex = 17;
-            this.lblCostumInterval.Text = "Individueller Intervall (sekunden)";
+            this.lblKeyActivate.Text = "Activate / Disable: F1";
             // 
             // MainForm
             // 
@@ -336,7 +336,6 @@
             this.Name = "MainForm";
             this.Resizable = false;
             this.Text = "Anti AFK";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.pMain.ResumeLayout(false);
             this.pMain.PerformLayout();
             this.ResumeLayout(false);

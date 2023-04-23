@@ -30,13 +30,7 @@ namespace Anti_AFK
         public MainForm()
         {
             InitializeComponent();
-            //Muss hier sein, sonst wird die Einstellung nicht gezogen.
-            //Wahrscheinlich weil beim abrufen der Setting die ComboBox Collection noch nicht gefüllt ist.
             LoadRunningApps();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
             InitializeWorker();
             InitializeKeyhandler();
         }
@@ -81,7 +75,6 @@ namespace Anti_AFK
             {
                 if (iCounterSec == (int)args[0] || bFirst)
                 {
-                    Console.WriteLine("1");
                     keypressWorker.ReportProgress(-1);
                     IntPtr handle = GetForegroundWindow();
 
@@ -91,7 +84,6 @@ namespace Anti_AFK
                     {
                         if (proc.MainWindowTitle == (string)args[1])
                         {
-                            Console.WriteLine("3");
                             SetForegroundWindow(proc.MainWindowHandle);
                             if ((string)args[3] != "")
                                 SendKeys.SendWait("{" + txtKeypressCostum.Text.Replace("{", "").Replace("}", "") + "}");
@@ -111,7 +103,6 @@ namespace Anti_AFK
                             }
                             else if ((int)args[2] == 2)
                             {
-                                Console.WriteLine("4");
                                 InputSimulator inputSim = new InputSimulator();
                                 //1 Sek. W drücken
                                 inputSim.Keyboard.KeyDown(VirtualKeyCode.VK_W);
@@ -159,7 +150,7 @@ namespace Anti_AFK
 
         private void keypressWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            lblStateVal.Text = "Aus";
+            lblStateVal.Text = "Off";
             AntiAFKOn = false;
         }
 
@@ -176,7 +167,7 @@ namespace Anti_AFK
             {
                 if (!keypressWorker.IsBusy)
                 {
-                    lblStateVal.Text = "An";
+                    lblStateVal.Text = "On";
                     AntiAFKOn = true;
 
                     List<object> args = new List<object>();
@@ -196,15 +187,15 @@ namespace Anti_AFK
 
         private void SettingsChange(object sender, EventArgs e)
         {
-            //Er übernimmt das letzte Zeichen des Costum Keypresses nicht, wenn man es übernimmt.
+            //It does not take over the last character of the Costum Keypress when you take it over.
             Settings.Default.CostumKeypress = txtKeypressCostum.Text;
             Settings.Default.Save();
         }
 
         private void btnCostumKeyInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Für einfach Buchstaben oder Zahlen, das Zeichen einfach reinschreiben.");
-            MessageBox.Show("Für sowas wie 'ENTER' oder 'SPACE', folgende Seite verwenden.");
+            MessageBox.Show("For simple letters or numbers, just write the character in.");
+            MessageBox.Show("For something such as 'ENTER' or 'SPACE', use the following page.");
             Process.Start("https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys?redirectedfrom=MSDN&view=windowsdesktop-6.0");
         }
     }
