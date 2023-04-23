@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/47632023/233846602-57ea1d4f-0103-4de1-9e48-8c182cd1b261.png)
+
+
 # How to use:
 - The program you want to idle must already be running.
 - When you start the program you select the process you want to idle.
