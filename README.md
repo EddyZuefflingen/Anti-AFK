@@ -5,7 +5,7 @@
 - The program jumps for the keystrokes always briefly in the application and then back to the previous. So you can play 2 games at the same time 
 - With F1 you start the fun.
 
-#Disclaimer
+# Disclaimer
 This program will probably break several TOS rules.
 Use at your own risk.
 
